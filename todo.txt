@@ -1,0 +1,7 @@
+Acessar paginas web especificadas
+Encontrar informacoes de produtos (preco)
+subir em uma tabela sql propria
+acessar essa tabela e criar graficos de evolucao de preco
+atualizar pagina web
+
+semanalmente atualizar
