@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PC Price History</title>
+</head>
+<body>
+    <h1>PC Price Evaluation</h1>
+
+    <form method="POST" action="/">
+        <label for="pc_name">Select PC:</label>
+        <select name="pc_name" id="pc_name" required>
+            <option value="">--Choose a PC--</option>
+            {% for pc in pc_names %}
+                <option value="{{ pc }}" {% if pc == selected_pc %}selected{% endif %}>{{ pc }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Show Price History</button>
+    </form>
+
+    {% if img_data %}
+        <h2>Price History for {{ selected_pc }}</h2>
+        <img src="data:image/png;base64,{{ img_data }}" alt="Price History Graph">
+    {% elif selected_pc %}
+        <p>No price data found for {{ selected_pc }}.</p>
+    {% endif %}
+</body>
+</html>
